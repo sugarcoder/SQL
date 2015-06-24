@@ -1,0 +1,46 @@
+SQL (Database Language)
+
+
+---------SELECT---------
+
+- SELECT ______ = enter the name of the column to be searched
+- FROM _____; = The table where the data is located
+
+Ex: 
+SELECT title, genre
+FROM movies;
+
+
+- SELECT * = selects all of the columns 
+
+
+
+
+----------WHERE---------
+
+- WHERE = used to filter out data and match the requested data
+
+SELECT _______
+FROM _______
+WHERE ________;
+
+Ex: 
+SELECT title
+FROM movies
+WHERE id = 2;
+
+
+SELECT * 
+FROM movies
+WHERE title = 'The Kid';
+
+
+
+
+
+
+
+
+
+
+
