@@ -14,8 +14,6 @@ FROM movies;
 - SELECT * = selects all of the columns 
 
 
-
-
 ----------WHERE---------
 
 - WHERE = used to filter out data and match the requested data
@@ -36,11 +34,270 @@ WHERE title = 'The Kid';
 
 
 
+----------ORDER BY----------
+
+- ORDER BY = can be used to sort data in a specific way.
+
+- ORDER BY sorts data by columns based on how it is to be viewed. 
+
+Ex: 
+SELECT title
+FROM movies
+ORDER BY duration;     // 'duration' is the column
+
+
+- ORDER BY duration DESC = DESC means descending order
+
+
+----------Comparing Data Using Comparison Operators---------
+
+> = Used to signify that all items to the left are great than what is to the right. 
+
+Ex: 
+SELECT *
+FROM movies
+WHERE duration > 100; 
+
+
+= The quary retrieves no record that provides a true comparison. 
+
+Ex: 
+SELECT *
+FROM movies
+WHERE duration = 100;
+
+
+<  Less than
+
+>=  Greater than or equal
+
+<=  Less than or equal
+
+
+<> or !=  Not Equal, used to compare all records that do not have _____. 
+
+Ex: 
+SELECT *
+FROM movies
+WHERE genre <> 'Comedy';
+
+
+
+-----------Matching-----------
+
+AND = filter multiple conditions
+ 
+SELECT ________
+FROM ________
+WHERE ________
+AND ________; 
+
+
+Ex: 
+SELECT title
+FROM movies
+WHERE id = 1
+AND genre = 'Comedy';
+
+
+
+OR = filter multiple conditions 
+
+SELECT _______
+FROM _______
+WHERE _______
+OR _______; 
+
+
+Ex: 
+SELECT title
+FROM movies
+WHERE id = 1
+OR genre = 'Comedy';
+
+
+
+----------Adding Data To The Table-----------
+
+Values = where to begin placing the values to be entered. 
+
+
+INSERT INTO ____The table the data is in____ (____The columns we want to add____)
+VALUES (___The actual values or data to add, separated by commas____);    
+
+
+Ex: 
+INSERT INT movies (id, title, genre, duration)
+VALUES (5, 'The Circus', 'Comedy', 71);
+
+or...
+
+INSERT INTO movies
+VALUES (5, 'The Circus', 'Comedy', 71);
+
+
+- You don't have to insert into every column.
+
+
+- Primary keys = This field will never be blank (Ex: id)
+
+- NULL value = used to represent a field with issing data, used as a placeholder for unknown data. 
+
+
+
+----------Updating Data In The Table----------
+
+UPDATE = To change the data
+SET = This sets the column to be changed, followed by the column name
+WHERE = helps pinpoint where the change will take place
+
+
+UPDATE ___The table the data is in_____
+SET _________ = _________
+(WHERE clause);
+
+
+Ex:
+UPDATE movies
+SET genre = 'Romance'
+WHERE id = 5;
+
+
+
+- Changing Multiple Fields At Once:
+
+Ex:
+UPDATE movies
+SET genre = 'Comedy', duration = 70
+WHERE id = 5;
+
+
+
+- Changing Multiple Rows At Once: 
+
+Ex: 
+UPDATE movies
+SET genre = 'Romance'
+WHERE id = 3 OR id = 5; 
+
+
+
+----------Removing Data In A Table----------
+
+- DELETE = removes data
+- WHERE = helps pinpoint where the change will take place
+
+
+DELETE FROM ____The data that contains the data to be removed______ (WHERE clause);
+
+Ex: 
+DELETE FROM movies WHERE id = 5; 
+
+DELETE FROM movies;  = This removes all the data from the table
+
+
+- Removing multiple rows: 
+
+Ex: 
+DELETE FROM movies WHERE duration < 100; 
+
+
+
+----------Using SQL to create new databases----------
+
+- CREATE DATABASE ______Name of the database_____; 
+
+Ex: 
+CREATE DATABASE Hannah Montana Theatre;
+
+
+
+----------Using SQL to remove databases / Tables----------
+
+DROP DATABASE ______Name of the database______; 
+
+Ex: 
+DROP DATABASE Hannah Montana Theatre; 
+
+
+
+DROP TABLE _____Name of the table_______; 
+
+Ex: 
+DROP TABLE movies;
+
+
+
+----------Using SQL to create new tables----------
+
+CREATE TABLE ____Name of the table_____
+( 
+column_name1
+column_name2
+column_name3
+...
+); 
+
+
+( ) = describes the columns of the tables
+
+
+datatype = describes what kind of value a clumn can contain
+
+
+CREATE TABLE
+(
+column_name1 datatype,
+column_name2 datatype,
+column_name3 datatype,
+...
+);
+
+
+
+Ex: 
+
+CREATE TABLE movies
+(
+id int, 
+title varchar(50),
+genre varchar(15),
+duration int
+);
 
 
 
 
+----------Using SQL to change table structure----------
+
+- ALTER TABLE = used to add , modify, and remove columns in a table. 
+
+ALTER TABLE ___ The table to make changes to_____
+ADD COLUMN ____Name of the column______  ____Datatype of the new column______;
+
+
+Ex: 
+ALTER TABLE movies
+ADD COLUMN ratings int;
 
 
 
+----------Adding data to the 'ratings' column----------
+
+Ex: 
+
+UPDATE movies
+SET ratings = 8
+WHERE title = 'Don Juan';
+
+UPDATE movies
+SET ratings = 9
+WHERE title = 'Peter Pan';
+
+
+
+----------Removing a column from a table----------
+
+ALTER TABLE movies
+DROP COLUMN ratings; 
 
