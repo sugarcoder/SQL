@@ -343,3 +343,24 @@ SELECT * FROM Customers
 WHERE City LIKE 'ber%'; 
 
 
+
+----------Truncate----------
+
+- If you want to delete the data inside the cell but not the table, use 'truncate'.
+
+TRUNCATE TABLE table_name;
+
+
+
+----------Auto Increment----------
+
+- Auto increment = allows a unique number to be generated when a new number is inserted into a table.
+
+Ex: 
+ID int NOT NULL AUTO_INCREMENT
+
+- Auto increment start with another value: 
+ALTER TABLE Persons AUTO_INCREMENT=100;
+
+
+
