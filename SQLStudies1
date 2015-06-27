@@ -50,6 +50,8 @@ ORDER BY duration;     // 'duration' is the column
 
 - ORDER BY duration DESC = DESC means descending order
 
+- ORDER BY duration ASC = ASC means ascending order
+
 
 ----------Comparing Data Using Comparison Operators---------
 
@@ -74,6 +76,12 @@ WHERE duration = 100;
 >=  Greater than or equal
 
 <=  Less than or equal
+
+BETWEEN = between a certain range
+
+Ex: 
+SELECT * FROM Products
+WHERE Price BETWEEN 10 AND 20; 
 
 
 <> or !=  Not Equal, used to compare all records that do not have _____. 
@@ -116,6 +124,14 @@ SELECT title
 FROM movies
 WHERE id = 1
 OR genre = 'Comedy';
+
+
+Combining AND OR: 
+
+SELECT *
+FROM movies
+WHERE id = 1 
+AND (title = 'Little Mermaid' OR title = 'Cinderella');
 
 
 
@@ -302,4 +318,28 @@ WHERE title = 'Peter Pan';
 
 ALTER TABLE movies
 DROP COLUMN ratings; 
+
+
+----------How to avoid Website Vulnerabilities: SQL Injections------------
+
+- Use the @ symbol. 
+
+Ex:
+
+txtNam = getRequestString("CustomerName");
+txtAdd = getRequestString("Address");
+txtCit = getRequestString("City");
+txtSQL = "INSERT INTO Customers (CustomerName,Address,City) Values(@0,@1,@2)";
+db.Execute(txtSQL,txtNam,txtAdd,txtCit);
+
+
+
+----------Wildcards----------
+
+% = can be used to substitute for any character(s) in a string. 
+
+Ex: 
+SELECT * FROM Customers
+WHERE City LIKE 'ber%'; 
+
 
