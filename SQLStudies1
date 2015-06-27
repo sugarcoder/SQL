@@ -162,6 +162,16 @@ VALUES (5, 'The Circus', 'Comedy', 71);
 - NULL value = used to represent a field with issing data, used as a placeholder for unknown data. 
 
 
+- To find data in the table that is null: 
+
+SELECT LastName, FirstName, Address FROM Persons
+WHERE Address IS NULL;
+
+- To find data in a table that is not null: 
+
+SELECT LastName, Firstname, Address FROM Persons
+WHERE Address IS NOT NULL;
+
 
 ----------Updating Data In The Table----------
 
