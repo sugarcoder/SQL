@@ -374,3 +374,15 @@ ALTER TABLE Persons AUTO_INCREMENT=100;
 
 
 
+----------Data Types----------
+
+- A data type defines what kind of volumn a column can contain. 
+- Each column in a database table requires to have a name and data type. 
+
+
+----------Functions----------
+
+- SQL has many built-in functions for performing calculations on data.
+
+
+
